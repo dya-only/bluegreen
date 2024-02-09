@@ -1,0 +1,10 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:ap-northeast-2:658986583341:task-definition/wsi-task-app:15"
+        LoadBalancerInfo:
+          ContainerName: "app"
+          ContainerPort: 3000
+        PlatformVersion: "LATEST"
